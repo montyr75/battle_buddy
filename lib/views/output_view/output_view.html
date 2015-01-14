@@ -1,0 +1,35 @@
+<link rel="import" href="../../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../../packages/core_elements/core_signals.html">
+<link rel="import" href="../../components/html_display/html_display.html">
+
+<polymer-element name="output-view">
+  <template>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"/>
+
+    <style>
+      :host {
+        padding: 0 0.4em;
+      }
+
+      .list-group-item {
+        background: none;
+        padding: 0.4em;
+        margin: 0.4em 0;
+        font-size: 0.7em;
+        font-weight: normal;
+      }
+    </style>
+
+    <core-signals on-core-signal-output="{{addMsg}}"></core-signals>
+
+    <ul class="list-group">
+      <template repeat="{{msg in messages}}">
+        <li class="list-group-item">
+          <div is="html-display" htmlContent="{{msg}}"></div>
+        </li>
+      </template>
+    </ul>
+  </template>
+
+  <script type="application/dart" src="output_view.dart"></script>
+</polymer-element>

@@ -1,0 +1,16 @@
+<link rel="import" href="../../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../../../packages/paper_elements/paper_input.html">
+
+<polymer-element name="text-roller-view" layout horizontal center>
+  <template>
+    <style>
+    </style>
+
+    <paper-input id="formula-input" label="Roll Formula" value="{{formula}}" on-keyup="{{keySubmit}}"></paper-input>
+    <paper-icon-button src="{{imagesPath}}icons/dice.png" on-tap="{{roll}}" disabled?="{{formula.isEmpty}}">Roll</paper-icon-button>
+    <paper-icon-button icon="clear" on-tap="{{clear}}" disabled?="{{formula.isEmpty}}">Roll</paper-icon-button>
+  </template>
+
+  <script type="application/dart" src="text_roller_view.dart"></script>
+</polymer-element>

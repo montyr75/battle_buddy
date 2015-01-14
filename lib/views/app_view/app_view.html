@@ -1,0 +1,57 @@
+<link rel="import" href="../../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../../packages/core_elements/core_header_panel.html">
+<link rel="import" href="../../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../../packages/core_elements/core_drawer_panel.html">
+<link rel="import" href="../output_view/output_view.html">
+<link rel="import" href="../text_roller_view/text_roller_view.html">
+<!--<link rel="import" href="../card_view/card_view.html">-->
+
+<polymer-element name="app-view">
+  <template>
+    <style>
+      :host {
+        height: 100%;
+      }
+
+      #wrapper {
+        margin-top: 15px;
+      }
+
+      .app-title {
+        text-align: center;
+      }
+
+      *[drawer] {
+        border-left: 2px inset lightgray;
+        -webkit-user-select: none;
+        user-select: none;
+        overflow-y: auto;
+      }
+
+      div[main] {
+        overflow-y: auto;
+      }
+    </style>
+
+
+    <core-header-panel flex mode="seamed">
+      <core-toolbar>
+        <h2 class="app-title" flex>Battle Buddy</h2>
+      </core-toolbar>
+
+      <div id="wrapper" fit>
+        <core-drawer-panel rightDrawer>
+          <output-view drawer>
+            <!--<h4 style="margin-left: 15px;">Output</h4>-->
+          </output-view>
+
+          <div main layout vertical center>
+            <text-roller-view></text-roller-view>
+          </div>
+        </core-drawer-panel>
+      </div>
+    </core-header-panel>
+  </template>
+
+  <script type="application/dart" src="app_view.dart"></script>
+</polymer-element>
