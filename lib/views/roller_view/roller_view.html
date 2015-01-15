@@ -1,0 +1,39 @@
+<link rel="import" href="../../../../packages/polymer/polymer.html">
+
+<polymer-element name="roller-view" layout horizontal center justified>
+  <template>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css"/>
+
+    <style>
+      input[type=number] {
+        width: 60px;
+        text-align: right;
+        margin: 0;
+      }
+
+      .input-group {
+        width: 95px;
+      }
+
+      .die-image {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        -moz-user-drag: -moz-none;
+        -webkit-user-drag: none;
+        user-drag: none;
+      }
+
+      .input-group-addon {
+        color: #CCCCCC;
+      }
+    </style>
+
+    <input type="number" class="form-control input-sm" value="{{qty | asInteger}}" autocomplete="off" on-keyUp="{{keySubmit}}" min="1">
+    <img class="die-image" _src="{{dieImagePath}}" on-click="{{roll}}">
+    <div class="input-group input-group-sm"><span class="input-group-addon input-sm">+/-</span><input type="number" class="form-control input-sm" value="{{mod | asInteger}}" autocomplete="off" on-keyUp="{{keySubmit}}"></div>
+    <div class="input-group input-group-sm"><span class="input-group-addon input-sm">x</span><input type="number" class="form-control input-sm" value="{{rep | asInteger}}" autocomplete="off" on-keyUp="{{keySubmit}}" min="1"></div>
+  </template>
+
+  <script type="application/dart" src="roller_view.dart"></script>
+</polymer-element>

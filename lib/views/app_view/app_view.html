@@ -3,6 +3,7 @@
 <link rel="import" href="../../../../packages/core_elements/core_toolbar.html">
 <link rel="import" href="../../../../packages/core_elements/core_drawer_panel.html">
 <link rel="import" href="../output_view/output_view.html">
+<link rel="import" href="../roller_view/roller_view.html">
 <link rel="import" href="../text_roller_view/text_roller_view.html">
 <!--<link rel="import" href="../card_view/card_view.html">-->
 
@@ -41,11 +42,13 @@
 
       <div id="wrapper" fit>
         <core-drawer-panel rightDrawer>
-          <output-view drawer>
-            <!--<h4 style="margin-left: 15px;">Output</h4>-->
-          </output-view>
+          <output-view drawer></output-view>
 
           <div main layout vertical center>
+            <template repeat="{{r in rollers}}">
+              <roller-view class="roller" sides="{{r}}"></roller-view>
+            </template>
+
             <text-roller-view></text-roller-view>
           </div>
         </core-drawer-panel>

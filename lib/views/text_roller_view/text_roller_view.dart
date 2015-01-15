@@ -30,5 +30,6 @@ class TextRollerView extends PolymerElement {
       roll();
     }
   }
+
   String get imagesPath => IMAGES_PATH;
 }

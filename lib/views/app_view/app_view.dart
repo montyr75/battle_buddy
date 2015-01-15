@@ -14,6 +14,16 @@ class AppView extends PolymerElement {
 
   @observable String bindingTest = "Binding is working...";
 
+  final List<int> rollers = const [
+      4,
+      6,
+      8,
+      10,
+      12,
+      20,
+      100
+  ];
+
   // filters and transformers can be referenced as class fields
   final Transformer asInteger = new StringToInt();
 
