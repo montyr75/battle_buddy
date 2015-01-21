@@ -24,8 +24,6 @@
 
       *[drawer] {
         border-left: 2px inset lightgray;
-        -webkit-user-select: none;
-        user-select: none;
         overflow-y: auto;
       }
 
@@ -45,11 +43,13 @@
           <output-view drawer></output-view>
 
           <div main layout vertical center>
-            <template repeat="{{r in rollers}}">
-              <roller-view class="roller" sides="{{r}}"></roller-view>
-            </template>
+            <div layout vertical>
+              <template repeat="{{r in rollers}}">
+                <roller-view class="roller" sides="{{r}}"></roller-view>
+              </template>
 
-            <text-roller-view></text-roller-view>
+              <text-roller-view></text-roller-view>
+            </div>
           </div>
         </core-drawer-panel>
       </div>
